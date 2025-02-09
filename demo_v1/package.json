@@ -4,10 +4,8 @@
   "private": true,
   "homepage": "https://jovita1217.github.io/flow/",
   "scripts": {
-  
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-
+    "deploy": "gh-pages -d build",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
