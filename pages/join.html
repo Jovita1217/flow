@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="../css/style.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us</title>
+    <style>
+        @font-face {
+            font-family: 'Zpix';
+            src: url('./fonts/Zpix.ttf') format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Zpix', sans-serif;
+            min-height: 100vh;
+        }
+
+        .decorative-images {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .ctf-image {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            user-select: none;
+        }
+
+        .top-left {
+            top: 10%;
+            left: 8%;
+        }
+
+        .top-right {
+            top: 10%;
+            right: 8%;
+        }
+
+        .bottom-left {
+            bottom: 10%;
+            left: 8%;
+        }
+
+        .bottom-right {
+            bottom: 10%;
+            right: 8%;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid black;
+            background: white;
+            color: black;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 20;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #f3f4f6;
+        }
+
+        .content-container {
+            min-height: 100vh;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button-container {
+            max-width: 32rem;
+            width: 100%;
+        }
+
+        .join-button {
+            width: 100%;
+            border: 2px solid black;
+            background: white;
+            padding: 1.5rem;
+            text-align: left;
+            margin-bottom: 2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .join-button:hover {
+            background-color: #f3f4f6;
+        }
+
+        .join-button h2 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .join-button p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative-images">
+        <img src="../images/glitch_1-o.gif" class="ctf-image top-left" alt="CTF decoration">
+        <img src="../images/glitch_2-o.gif" class="ctf-image top-right" alt="CTF decoration">
+        <img src="../images/glitch_3-o.gif" class="ctf-image bottom-left" alt="CTF decoration">
+        <img src="../images/glitch_4-o.gif" class="ctf-image bottom-right" alt="CTF decoration">
+    </div>
+
+    <a href="../index.html" class="back-button">← Back</a>
+
+    <div class="content-container">
+        <div class="button-container">
+            <button class="join-button">
+                <h2>Join our Waiting List</h2>
+                <p>might take a while for us to finish development - be patient!</p>
+            </button>
+
+            <button class="join-button">
+                <h2>Join our beta testing team</h2>
+                <p>utterly believe in our mission? join our insider group chat and access pre-alpha early!</p>
+            </button>
+
+            <button class="join-button">
+                <h2>Join our dev team</h2>
+                <p>1x pixel artist, 1-2 front end devs, 1-2 back end devs. working physically in Shanghai is required</p>
+            </button>
+        </div>
+    </div>
+</body>
+</html

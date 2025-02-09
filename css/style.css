@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'Zpix';
+    src: url('./fonts/Zpix.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background);
+  font-family: 'Zpix', sans-serif;
+  background-image: url('../images/background-nr.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-container img {
+  display: block;
+  margin: 0 auto;
+}
+
+.ctf-image {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  user-select: none;
+}
+
+.top-left {
+  top: 10%;
+  left: 8%;
+}
+
+.top-right {
+  top: 10%;
+  right: 8%;
+}
+
+.bottom-left {
+  bottom: 10%;
+  left: 8%;
+}
+
+.bottom-right {
+  bottom: 10%;
+  right: 8%;
+}
+
+.button {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #f3f4f6;
+}
+
+.terminal-text {
+  position: fixed;
+  font-family: monospace;
+  font-size: 0.875rem;
+  padding: 1rem;
+  backdrop-blur-sm;
+}
+
+.left-terminal {
+  top: 20px;
+  left: 20px;
+}
+
+.right-terminal {
+  top: 20px;
+  right: 20px;
+}

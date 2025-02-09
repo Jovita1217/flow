@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afterlife Club 白皮书</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'Zpix';
+            src: url('../fonts/Zpix.ttf') format('truetype');
+            font-display: swap;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Zpix', monospace;
+            line-height: 2;
+            color: #333;
+        }
+
+        .matrix-canvas {
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .matrix-canvas.left {
+            left: 0;
+        }
+
+        .matrix-canvas.right {
+            right: 0;
+        }
+
+        .content-wrapper {
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .whitepaper-container {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            padding: 3rem;
+            margin: 2rem auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid black;
+            background: white;
+            color: black;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 20;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #f3f4f6;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-shadow: 2px 2px 0 #00ff00;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            text-shadow: 1px 1px 0 #00ff00;
+            margin: 2rem 0 1rem;
+            color: #2a2a2a;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #eee;
+        }
+
+        .principle {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+
+        .principle h3 {
+    
+            margin-bottom: 0.5rem;
+        }
+
+        .cyberpunk-accent {
+            color: #00ff00;
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-button">← 返回</a>
+
+    <canvas id="matrixLeft" class="matrix-canvas left"></canvas>
+    <canvas id="matrixRight" class="matrix-canvas right"></canvas>
+
+    <div class="content-wrapper">
+        <div class="whitepaper-container">
+            <h1>Afterlife Club 白皮书</h1>
+            
+            <div class="intro">
+                <p>我是鸽子，是大家的Club Leader，也会是以后的站长。先来介绍一下自己吧。我在15岁时就经营过30w用户的无广告无会员纯慈善的PigeonHentai，被大家亲切的称为"鸽娘"（笑）。后来，我自读EMBA以及你能想到的每一个大学学科。我深刻的明白，不管是我这一位站长，还是我们这一个维护Afterlife Club这样子的兄弟会的小团队，是要有呕心沥血、民意当天的觉悟在的。</p>
+                
+                <p>Afterlife Club这个名字起的有点由来：Afterlife是赛伯朋克2077中所有最有极客精神的牛人们才有机会被成员邀请得到名额的俱乐部，我们的Afterlife Club也确实承载了十足的赛伯朋克那叛逆又兄弟情十足的精神脉络。这个名字我是很喜欢的。</p>
+            </div>
+
+            <h2>致我们未来的成员们：</h2>
+
+            <div class="principle">
+                <h3>1. Makers, Gather Up</h3>
+                <p>中国需要创客精神引领我们步入疯狂的未来20年。DeepSeek已经证实了开源软件照样能赢，能被国家重视。Afterlife Club是一个高能创客们的兄弟会。我们的成员是要有开源精神、社会责任感的一帮有干劲的疯子们。混账的"牛人"们，请滚。</p>
+            </div>
+
+            <div class="principle">
+                <h3>2. We are Exclusive</h3>
+                <p>每位Afterlife Club的成员们在成为会员前，都要经过个人档案&多重面试的审核，通过后需要交入会费，最终可以得到一张实体&电子的"黑卡"：这是你作为Afterlife成员这一荣誉的地位符号。黑卡可以当单独的工作名片，卡上的QR码也可以直接跳转至你在Afterlife Social上属于你的个人档案页，让扫码者快速看懂你的为人风格。到时候，炫出黑卡，你就能是全场最靓、最被尊重为大佬的仔！</p>
+            </div>
+
+            <div class="principle">
+                <h3>3. Radical Inclusion</h3>
+                <p>我们支持不同的，哪怕是旁人听似可笑但你有理由坚信的观点在此碰撞。有谁和你的观点不同？欢迎大家来一场激情洋溢的辩论吧！我们支持任何性取向，任何身份认同，任何人生哲学观。在这里，你是自由的。</p>
+            </div>
+
+            <div class="principle">
+                <h3>4. Zero Tolerance of Discrimination</h3>
+                <p>Afterlife Club的会员应当是眼纳全球、包容万物的。有人出现歧视LGBTQ人群、歧视他人出生、地域歧视等的现象查到必封，并且取消所有黑卡的权益。这些人是可耻的，过街老鼠我们不欢迎。</p>
+            </div>
+
+            <div class="principle">
+                <h3>5. Compassion & Empathy</h3>
+                <p>在Afterlife的社区中，我们都要主动力求成为社区中善良、充满共情心的人。大家请坚信：只要互帮互助，将Afterlife Clubbers作为自己的亲手足来对待，现在的这一切耕耘就一定！一定！一定！会无比灿烂。</p>
+            </div>
+
+            <div class="principle">
+                <h3>6. White Hat ++ Grey Hat</h3>
+                <p>白帽精神是我们的社会责任感的体现，而灰帽精神是我们虽然坚持Do No Harm原则，但是勇于打破常规的反叛精神。开发一个开源微信外挂插件？可以！黑入谷歌内网，自豪的告诉谷歌他们数据库的漏洞，然后炫耀一番？可以！干就完事了！</p>
+            </div>
+
+            <div class="principle">
+                <h3>7. Radical Open-Source Financing</h3>
+                <p>Afterlife公司的每一笔开支、流水、投资、工资发放等都会完全公开给Afterlife Club成员们。所有股票账户、Polymarket期货投资等都会公开。我们的Afterlife Fund基金在初期维护着社区的开发成本，后期会作为公益项目来赞助众多创客营、黑客松，也会为优秀的开源项目筹资。</p>
+            </div>
+
+            <div class="principle">
+                <h3>8. We are not controlled by anyone</h3>
+                <p>我们的所有投资方都无权对我们的公益项目开支以及我们的社区运营进行干预。我们的员工直接操控我们的基金和公司。操他妈的VC！我们永远不甘也不会沦落成抛弃"Don't Be Evil"的谷歌，或者是Closed的要死的OpenAI。</p>
+            </div>
+
+            <div class="principle">
+                <h3>9. We Want You!</h3>
+                <p>如果你认同我们的使命，那就请将这个白皮书分享在你的朋友圈，并且再额外私信分享给你最有人脉的朋友们，我们要让Afterlife Club火遍全创客界！</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Matrix Rain Effect
+        class MatrixRain {
+            constructor(canvasId) {
+                this.canvas = document.getElementById(canvasId);
+                this.ctx = this.canvas.getContext('2d');
+                this.initialize();
+            }
+
+            initialize() {
+                this.canvas.width = 300;
+                this.canvas.height = window.innerHeight;
+
+                this.katakana = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+                this.latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                this.nums = '0123456789';
+                this.alphabet = this.katakana + this.latin + this.nums;
+
+                this.fontSize = 16;
+                this.columns = Math.floor(this.canvas.width / this.fontSize);
+                this.drops = Array(this.columns).fill(0);
+
+                this.draw = this.draw.bind(this);
+                setInterval(this.draw, 33);
+            }
+
+            draw() {
+                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+                this.ctx.fillStyle = '#0F0';
+                this.ctx.font = `${this.fontSize}px monospace`;
+
+                for (let i = 0; i < this.drops.length; i++) {
+                    const text = this.alphabet[Math.floor(Math.random() * this.alphabet.length)];
+                    this.ctx.fillText(text, i * this.fontSize, this.drops[i] * this.fontSize);
+
+                    if (this.drops[i] * this.fontSize > this.canvas.height && Math.random() > 0.975) {
+                        this.drops[i] = 0;
+                    }
+                    this.drops[i]++;
+                }
+            }
+        }
+
+        // Initialize everything when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new MatrixRain('matrixLeft');
+            new MatrixRain('matrixRight');
+        });
+    </script>
+</body>
+</html>

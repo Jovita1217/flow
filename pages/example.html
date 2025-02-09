@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="../css/style.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Effect</title>
+    <style>
+        @font-face {
+            font-family: 'Zpix';
+            src: url('./fonts/Zpix.ttf') format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Zpix', sans-serif;
+            min-height: 100vh;
+        }
+
+        .matrix-canvas {
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .matrix-canvas.left {
+            left: 0;
+        }
+
+        .matrix-canvas.right {
+            right: 0;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid black;
+            background: white;
+            color: black;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 20;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #f3f4f6;
+        }
+
+        .window-box {
+            background: white;
+            padding: 1.5rem;
+            border: 2px solid #666;
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+            margin-bottom: 2rem;
+            max-height: 24rem;
+            overflow-y: auto;
+        }
+
+        .content-container {
+            max-width: 64rem;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrixLeft" class="matrix-canvas left"></canvas>
+    <canvas id="matrixRight" class="matrix-canvas right"></canvas>
+
+    <a href="../index.html" class="back-button">← Back</a>
+
+    <div class="content-container">
+        <div class="window-box">
+            <h2>👋 Welcome!</h2>
+            <p style="font-size: 1.125rem; margin-top: 1rem;">
+                Explore the Matrix Rain effect on this page!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        class MatrixRain {
+            constructor(canvasId) {
+                this.canvas = document.getElementById(canvasId);
+                this.ctx = this.canvas.getContext('2d');
+                this.initialize();
+            }
+
+            initialize() {
+                this.canvas.width = 300;
+                this.canvas.height = window.innerHeight;
+
+                this.katakana = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+                this.latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                this.nums = '0123456789';
+                this.alphabet = this.katakana + this.latin + this.nums;
+
+                this.fontSize = 16;
+                this.columns = Math.floor(this.canvas.width / this.fontSize);
+                this.drops = Array(this.columns).fill(0);
+
+                this.draw = this.draw.bind(this);
+                setInterval(this.draw, 33);
+            }
+
+            draw() {
+                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+                this.ctx.fillStyle = '#0F0';
+                this.ctx.font = `${this.fontSize}px monospace`;
+
+                for (let i = 0; i < this.drops.length; i++) {
+                    const text = this.alphabet[Math.floor(Math.random() * this.alphabet.length)];
+                    this.ctx.fillText(text, i * this.fontSize, this.drops[i] * this.fontSize);
+
+                    if (this.drops[i] * this.fontSize > this.canvas.height && Math.random() > 0.975) {
+                        this.drops[i] = 0;
+                    }
+                    this.drops[i]++;
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new MatrixRain('matrixLeft');
+            new MatrixRain('matrixRight');
+        });
+    </script>
+</body>
+</html>
