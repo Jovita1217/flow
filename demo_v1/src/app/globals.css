@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: #000;
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/background-nr.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.code-rain {
+  position: fixed;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: space-around;
+}
+
+.code-rain .rain-column {
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+}
+
+.code-rain .rain-char {
+  color: rgba(0, 255, 0, 0.7);
+  font-size: 16px;
+  line-height: 1;
+  animation: fall linear infinite;
+  transform: translateY(-100%);
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+h1, h2, p, span {
+  color: #000;
+}
+
+@font-face {
+  font-family: 'Zpix';
+  src: url('/public/zpix.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Zpix', sans-serif;
+}
+
+.max-h-96::-webkit-scrollbar {
+  display: none;
+}
+
+.max-h-96 {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.max-h-64::-webkit-scrollbar {
+  display: none;
+}
+
+.max-h-64 {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
