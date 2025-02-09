@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="../css/style.css">
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrix Effect</title>
+    <title>Ryan.eth Profile</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
         @font-face {
             font-family: 'Zpix';
-            src: url('./fonts/Zpix.ttf') format('truetype');
+            src: local('Zpix');
         }
-
+        
         * {
             margin: 0;
             padding: 0;
@@ -19,7 +19,8 @@
 
         body {
             font-family: 'Zpix', sans-serif;
-            min-height: 100vh;
+            line-height: 1.8;
+            background: black;
         }
 
         .matrix-canvas {
@@ -27,7 +28,7 @@
             top: 0;
             height: 100vh;
             pointer-events: none;
-            z-index: 10;
+            z-index: 0;
         }
 
         .matrix-canvas.left {
@@ -39,62 +40,144 @@
         }
 
         .back-button {
-            position: fixed;
+            position: absolute;
             top: 2rem;
             left: 2rem;
             padding: 0.5rem 1rem;
-            border: 1px solid black;
             background: white;
+            border-width: 2px;
+            border-style: solid;
+            border-color: #fff #888 #888 #fff;
             color: black;
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            z-index: 20;
-            transition: background-color 0.3s;
+            z-index: 9999;
+            font-family: 'Zpix', sans-serif;
         }
 
         .back-button:hover {
             background-color: #f3f4f6;
         }
 
-        .window-box {
-            background: white;
-            padding: 1.5rem;
-            border: 2px solid #666;
-            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
-            margin-bottom: 2rem;
-            max-height: 24rem;
-            overflow-y: auto;
+        .content-wrapper {
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
         }
 
-        .content-container {
-            max-width: 64rem;
-            margin: 0 auto;
-            padding: 2rem;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .profile-container {
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem;
+            margin: 2rem auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            text-shadow: 2px 2px 0 #00ff00;
+            color: #1a1a1a;
+        }
+
+        .cyberpunk-accent {
+            color: #00ff00;
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+        }
+
+        /* Simple box style */
+        .win98-box {
+            background: white;
+            border-width: 2px;
+            border-style: solid;
+            border-color: #fff #888 #888 #fff;
+            padding: 1.5rem;
+        }
+
+        .card-3d {
+            background: white;
+            border-width: 2px;
+            border-style: solid;
+            border-color: #fff #888 #888 #fff;
+            padding: 1.5rem;
         }
     </style>
 </head>
 <body>
+    <a href="../index.html" class="back-button">← Back</a>
+    
     <canvas id="matrixLeft" class="matrix-canvas left"></canvas>
     <canvas id="matrixRight" class="matrix-canvas right"></canvas>
 
-    <a href="../index.html" class="back-button">← Back</a>
+    <div class="content-wrapper">
+        <div class="profile-container">
+            <div class="flex items-start mb-8 card-3d">
+                <img src="../images/Ryan.jpg" alt="Profile" class="rounded-full w-32 h-32 object-cover shadow-lg">
+                <div class="ml-4">
+                    <h1 class="text-2xl mb-2">Ryan.eth</h1>
+                    <p class="text-sm">UID: SL00001</p>
+                    <p class="text-sm cyberpunk-accent">猛男就应该穿女装</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="border-2 border-green-400 px-2 py-1 text-xs">00后</span>
+                        <span class="border-2 border-green-400 px-2 py-1 text-xs">Hacker</span>
+                        <span class="border-2 border-green-400 px-2 py-1 text-xs">Creator</span>
+                        <span class="border-2 border-green-400 px-2 py-1 text-xs">创业</span>
+                        <span class="border-2 border-green-400 px-2 py-1 text-xs">开源自我</span>
+                        <span class="border-2 border-green-400 px-2 py-1 text-xs">长期主义</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-8 card-3d">
+                <h2 class="text-xl mb-4">👋 快速了解我？</h2>
+                <div class="space-y-4 text-sm">
+                    <p>1. Ryan🦄.eth, 00后</p>
+                    <p>2. 浙大图灵班20级，辅修创业(ITP)，之前在Yale暑研过三个月，24年刚毕业，想去Stanford，现在全职创业，在cook一个年轻人的创业加速器Spark Lab，详细可以看 mp.weixin.qq.com</p>
+                    <p>3. 我是一个Hacker, Maker, and Creator，做过一些「自己的」的作品。Build In Public开源自我，黑客松惯犯，在尝试成为独立开发，学习出海ing，伪数字游民，超级链接者，00后创业小学生，Work For Myself</p>
+                    <p>4. Buidling Crypto和Generative AI，目前对科技、社区、创业、教育感兴趣</p>
+                    <p>更详细的可以看我的个人说明书: k5ms77k0o1.feishu.cn</p>
+                </div>
+            </div>
 
-    <div class="content-container">
-        <div class="window-box">
-            <h2>👋 Welcome!</h2>
-            <p style="font-size: 1.125rem; margin-top: 1rem;">
-                Explore the Matrix Rain effect on this page!
-            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="win98-box">
+                    <h2 class="text-lg mb-4">🖼️ 我眼里的我</h2>
+                    <p class="text-sm">
+                        就像 YC创始人 Paul Graham 的《Hackers And Painters 》说的，我是一个 Hacker, Maker, and Creator。
+                        我的电脑就是我的画笔，我用他"画"出我的产品、blog、视频、音频。
+                        Hacking 对于我来说，是一种表达自己的方式；同时也是一种链接、与他人共鸣的方法，就像一颗石子，落在湖里泛起的涟漪。
+                        「我的所有作品」也是我正在泛起的涟漪，包括这篇自我介绍。
+                    </p>
+                </div>
+                <div class="win98-box">
+                    <div class="embed-responsive aspect-video mb-4">
+                        <iframe
+                            src="https://www.youtube.com/embed/m7_3T8fpNPY"
+                            class="w-full h-full"
+                            title="YouTube video"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="text-sm">
+                        Want3是一个public goods工具，服务于解决ETH生态上的帮人代支付的问题。每个人都可以在我们平台上发布自己的愿望，并且发送分享给其他人...
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center py-8 win98-box">
+                <span class="text-6xl">+</span>
+            </div>
         </div>
     </div>
 
     <script>
+        // Matrix Rain Effect
         class MatrixRain {
             constructor(canvasId) {
                 this.canvas = document.getElementById(canvasId);
