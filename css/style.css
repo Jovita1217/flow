@@ -19,16 +19,44 @@ body, html {
   background-attachment: fixed;
 }
 
+/* 父容器 */
+.button-container {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  margin-top: 20px; /* 调整按钮与 Logo 的距离 */
+}
+
+/* 按钮样式 */
+.button {
+  text-align: center;
+  font-size: 16px;
+  background-color: #000; /* 按钮背景颜色 */
+  text-decoration: none; /* 去掉下划线 */
+  transition: background-color 0.3s ease; /* 添加悬停过渡效果 */
+}
+
+.button:hover {
+  background-color: #333; /* 悬停时的背景颜色 */
+}
+
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
   width: 100%;
 }
 
 .logo-container img {
   display: block;
   margin: 0 auto;
+}
+
+.logo {
+  margin-top: -1-0px; /* 让 Logo 往上移动 */
+  max-width: 100%; /* 确保响应式适配 */
+  height: auto;
 }
 
 .ctf-image {
@@ -82,11 +110,11 @@ body, html {
 }
 
 .left-terminal {
-  top: 20px;
-  left: 20px;
+  top: 30px;
+  left: 400px;
 }
 
 .right-terminal {
-  top: 20px;
-  right: 20px;
+  top: 60px;
+  right: 500px;
 }
